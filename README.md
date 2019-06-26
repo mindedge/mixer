@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/mindedge/mixer.svg?branch=master)](https://travis-ci.org/mindedge/mixer) [![codecov](https://codecov.io/gh/mindedge/mixer/branch/master/graph/badge.svg)](https://codecov.io/gh/mindedge/mixer)
