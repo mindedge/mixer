@@ -1,0 +1,29 @@
+
+language: php
+php: 
+  - "7.2"
+  
+branches:
+  only:
+    - master
+    - development
+
+env:
+  - COMPOSER_OPTS="--no-interaction --prefer-dist --no-suggest"
+
+before_script:
+    - travis_retry composer self-update
+    - travis_retry composer install --no-interaction --prefer-source --dev
+
+script:
+  - vendor/bin/phpunit --coverage-clover=coverage.xml
+
+notifications:
+  email:
+    recipients:
+      - mmcgrath@mindedge.com
+    on_success: always # default: change
+    on_failure: always # default: always
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)

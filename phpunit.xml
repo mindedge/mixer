@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    colors="true"    
+    backupGlobals="false"
+    cacheResult="false"
+    printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer"
+    backupStaticAttributes="false"
+    cacheTokens="false"
+    beStrictAboutTestsThatDoNotTestAnything="false"
+    bootstrap="vendor/autoload.php"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnError="false"
+    stopOnFailure="false"
+    verbose="true">
+    <testsuites>
+        <testsuite name="Mixer">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <env name="PHPUNIT_RESULT_CACHE" value="false" />
+        <env name="BOOTSTRAP_CLEAR_CACHE_ENV" value="test"/>
+    </php>
+</phpunit>
